@@ -1,23 +1,23 @@
-import Vue from 'vue'
+// import Vue from 'vue';
 
 export default {
     state: {
-        isShow: false,
+        isShow: false
     },
     mutations: {
         enableshow (state) {
-            state.isShow = true
+            state.isShow = true;
         },
         disableshow (state) {
-            state.isShow = false
+            state.isShow = false;
         }
     },
     actions: {
         enableshow ({commit}) {
-            commit('enableshow')
+            commit('enableshow');
         },
         disableshow ({commit}) {
-            commit('disableshow')
+            commit('disableshow');
         }
     }
-}
+};

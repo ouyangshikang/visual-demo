@@ -2,41 +2,33 @@
      <transition name="fade">
          <div class="nav-list-wrapper">
              <ul class="nav-list" id="nav-bar-nav">
-                 <li class="nav-item" v-for="(item,index) in items">
+                 <li
+                    class="nav-item"
+                    v-for="(item,index) in items"
+                    :key="index"
+                >
                      <router-link :to="'/' + item.ad">{{item.name}}</router-link>
                  </li>
              </ul>
-             <div class="qr_logo">
-                 <span>手机浏览</span>
-                 <img :src="require('../assets/qr.png')" alt="">
-             </div>
          </div>
     </transition>
 </template>
 
 <script>
-    import { mapActions } from 'vuex';
+    // import { mapActions } from 'vuex';
     export default {
         data () {
             return {
-                items: [
-                    {name:'技术博客',ad:'blog'},
-                    {name:'Javascript',ad:'js'},
-                    {name:'主流框架',ad:'vr'},
-                    {name:'小程序',ad:'wechat'},
-                    {name:'AngularJs',ad:'ng'},
-                    {name:'NodeJs',ad:'nodejs'},
-                    {name:'移动端开发',ad:'mobile'},
-                    {name:'构建工具',ad:'maketool'},
-                    {name:'工具手册',ad:'handbook'},
-                    {name:'优秀库',ad:'static'},
-                    {name:'版本控制',ad:'gits'},
-                    {name:'其他语言',ad:'oth'},
-                    {name:'关于本站',ad:'aboutme'}
-                ]
-            }
+                items: [{
+                    name: '技术博客',
+                    ad: 'blog'
+                }, {
+                    name: 'Javascript',
+                    ad: 'js'
+                }]
+            };
         }
-    }
+    };
 </script>
 
 <style scoped>

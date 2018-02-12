@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import NavBar from './components/nav.vue'
-import Headers from './components/header.vue'
+import NavBar from './components/nav.vue';
+import Headers from './components/header.vue';
 
 export default {
     name: 'app',
@@ -18,12 +18,12 @@ export default {
         NavBar,
         Headers
     },
-    data() {
+    data () {
         return {
 
-        }
+        };
     }
-}
+};
 </script>
 
 <style>
