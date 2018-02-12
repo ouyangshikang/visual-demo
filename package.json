@@ -1,8 +1,8 @@
 {
   "name": "vue-component",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "biyuqi <biyuqiwan@163.com>",
+  "description": "canvas book",
+  "author": "baituo",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
