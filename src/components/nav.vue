@@ -92,19 +92,21 @@
     .nav-item a{
         display: block;
         text-decoration: none;
-        color: #333;
+        color: #727272;
+        font-weight: bold;
         transition: all .2s;
         padding-left: 30px;
     }
     .nav-item a:hover{
-        background-color: #4FC08D;
+        background-color:rgba(0,0,0,0.05);;
         cursor: pointer;
-        color: #fff;
+        color: #021c36;
         font-weight: bold;
     }
     a.router-link-active{
-        color:#4FC08D;
+        color:#021c36;
         font-weight: bold;
+        background: rgba(0,0,0,0.05);
     }
     a.router-link-active:before{
         position: absolute;
@@ -114,7 +116,7 @@
         content: '';
         width: 4px;
         height: 40px;
-        background-color: #4FC08D;
+        background-color: #021c36;
     }
     @media screen and (min-width: 500px) and (max-width: 1100px){
         *{

@@ -3,15 +3,11 @@
         <section class="main-mod">
             <p class="design">Javascript</p>
             <ul class="main-wraper">
-                <li class="main-mod-con" v-for="(item,index) in jsData">
-                    <a v-bind:href="item.link" target="_blank">{{item.name}}</a>
-                </li>
-            </ul>
-        </section>
-        <section class="main-mod">
-            <p class="design">Jquery</p>
-            <ul class="main-wraper">
-                <li class="main-mod-con" v-for="(item,index) in jsData2">
+                <li
+                    class="main-mod-con"
+                    v-for="(item,index) in jsData"
+                    :key="index"
+                >
                     <a v-bind:href="item.link" target="_blank">{{item.name}}</a>
                 </li>
             </ul>
@@ -20,13 +16,13 @@
 </template>
 
 <script>
-    import data from '../../static/data/basedata.json'
+    import data from '../../static/data/basedata.json';
     export default {
         data () {
             return {
-                jsData:null,
-                jsData2:null
-            }
+                jsData: null,
+                jsData2: null
+            };
         },
         methods: {
             getData () {
@@ -35,9 +31,9 @@
             }
         },
         mounted () {
-            this.getData()
+            this.getData();
         }
-    }
+    };
 </script>
 
 <style lang="css">
