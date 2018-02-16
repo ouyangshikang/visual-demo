@@ -1,10 +1,18 @@
-const PersonBlog = require('components/personBlog.vue');
-const Javascript = require('components/Javascript.vue');
-
-const routes = [
-    {path: '/', redirect: '/blog'},
-    {path: '/blog', component: PersonBlog},
-    {path: '/js', component: Javascript}
-];
+import PersonBlog from '../components/personBlog';
+import Javascript from '../components/Javascript';
+import canvasDemo from '../components/canvas-demo';
+const routes = [{
+    path: '/',
+    redirect: '/blog'
+}, {
+    path: '/blog',
+    component: PersonBlog
+}, {
+    path: '/js',
+    component: Javascript
+}, {
+    path: '/canvas-demo',
+    component: canvasDemo
+}];
 
 export default routes;

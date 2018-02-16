@@ -7,7 +7,7 @@
                     v-for="(item,index) in items"
                     :key="index"
                 >
-                     <router-link :to="'/' + item.ad">{{item.name}}</router-link>
+                     <router-link :to="'/' + item.url">{{item.name}}</router-link>
                  </li>
              </ul>
          </div>
@@ -21,10 +21,13 @@
             return {
                 items: [{
                     name: '技术博客',
-                    ad: 'blog'
+                    url: 'blog'
                 }, {
                     name: 'Javascript',
-                    ad: 'js'
+                    url: 'js'
+                }, {
+                    name: 'canvas学习demo',
+                    url: 'canvas-demo'
                 }]
             };
         }
