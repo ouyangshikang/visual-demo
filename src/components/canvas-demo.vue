@@ -12,6 +12,7 @@
                 </li>
             </ul>
         </section>
+        <router-view class="fullpage-demo"></router-view>
     </div>
 </template>
 
@@ -19,20 +20,36 @@
     export default {
         data () {
             return {
-                canvasDemo: [{
-                    url: '',
-                    name: '星座特效'
-                }]
+                baseUrl: ''
             };
+        },
+        computed: {
+            canvasDemo() {
+                const baseUrl = this.baseUrl;
+                return [{
+                    url: baseUrl + '/canvasStar',
+                    name: '星座特效'
+                }];
+            }
         },
         methods: {
 
         },
         mounted () {
+            this.baseUrl = window.location.href;
         }
     };
 </script>
 
 <style lang="css">
-
+    .fullpage-demo {
+        position: fixed;
+        width: 100vw;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+    }
 </style>

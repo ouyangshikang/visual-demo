@@ -1,6 +1,9 @@
 import PersonBlog from '../components/personBlog';
 import Javascript from '../components/Javascript';
 import canvasDemo from '../components/canvas-demo';
+
+import canvasStar from '../page/canvas-star';
+
 const routes = [{
     path: '/',
     redirect: '/blog'
@@ -12,7 +15,11 @@ const routes = [{
     component: Javascript
 }, {
     path: '/canvas-demo',
-    component: canvasDemo
+    component: canvasDemo,
+    children: [{
+        path: 'canvasStar',
+        component: canvasStar
+    }]
 }];
 
 export default routes;
