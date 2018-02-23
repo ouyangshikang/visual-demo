@@ -105,7 +105,7 @@ body{
 }
 .main_content{
     height: 100%;
-    width: 100%;
+    width: calc(100% - 200px);
     box-sizing: border-box;
     background-color: #F8F8F8;
     position: absolute;

@@ -2,7 +2,7 @@ import PersonBlog from '../components/personBlog';
 import Javascript from '../components/Javascript';
 import canvasDemo from '../components/canvas-demo';
 
-import canvasStar from '../page/canvas-star';
+import canvasClock from '../page/canvas-clock';
 
 const routes = [{
     path: '/',
@@ -17,8 +17,8 @@ const routes = [{
     path: '/canvas-demo',
     component: canvasDemo,
     children: [{
-        path: 'canvasStar',
-        component: canvasStar
+        path: 'canvasClock',
+        component: canvasClock
     }]
 }];
 

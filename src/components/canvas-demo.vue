@@ -27,8 +27,8 @@
             canvasDemo() {
                 const baseUrl = this.baseUrl;
                 return [{
-                    url: baseUrl + '/canvasStar',
-                    name: '星座特效'
+                    url: baseUrl + '/canvasClock',
+                    name: '数字时钟特效'
                 }];
             }
         },
