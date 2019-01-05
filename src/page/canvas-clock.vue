@@ -146,7 +146,32 @@
                         [0, 0, 0, 0],
                         [0, 0, 0, 0]
                     ] // :
-                ]
+                ],
+                ball: {  // 小球对象
+                    x: 512,
+                    y: 100,
+                    r: 20,
+                    g: 2, // 重力加速度
+                    vx: -4, // x方向的速度
+                    vy: 0, // y方向的速度
+                    color: '#005588'
+                },
+                balls: [],
+                colors: [
+                    '#FFB3A7',
+                    '#9D2933',
+                    '#FF0097',
+                    '#FFF143',
+                    '#FF8C31',
+                    '#00BC12',
+                    '#00E09E',
+                    '#424C50',
+                    '#44CEF6',
+                    '#8D4BBB'
+                ],
+                curSeconds: 0,
+                curMinutes: 0,
+                curHours: 0
             };
         },
 
@@ -158,9 +183,8 @@
                 let context = canvas.getContext('2d');
                 let root = this;
                 setInterval(() => {
-                    context.clearRect(0, 0, this.WINDOW_WIDTH, this.WINDOW_HEIGHT);
                     root.render(context);
-                }, 1000);
+                }, 50);
                 // this.render(context);
             },
             render(context) {
@@ -168,6 +192,33 @@
                 let hours = date.getHours();
                 let minutes = date.getMinutes();
                 let seconds = date.getSeconds();
+                // 秒钟的判断
+                if (parseInt(this.curSeconds / 10) !== parseInt(seconds / 10)) {
+                    this.addBalls(this.MARGIN_LEFT + 80 * (this.radius + 1), this.MARGIN_TOP, parseInt(seconds / 10));
+                }
+                if (parseInt(this.curSeconds % 10) !== parseInt(seconds % 10)) {
+                    this.addBalls(this.MARGIN_LEFT + 95 * (this.radius + 1), this.MARGIN_TOP, parseInt(seconds % 10));
+                }
+                this.curSeconds = seconds;
+                // 分钟判断
+                if (parseInt(this.curMinutes / 10) !== parseInt(minutes / 10)) {
+                    this.addBalls(this.MARGIN_LEFT + 40 * (this.radius + 1), this.MARGIN_TOP, parseInt(minutes / 10));
+                }
+                if (parseInt(this.curMinutes % 10) !== parseInt(minutes % 10)) {
+                    this.addBalls(this.MARGIN_LEFT + 55 * (this.radius + 1), this.MARGIN_TOP, parseInt(minutes % 10));
+                }
+                this.curMinutes = minutes;
+                // 时钟判断
+                if (parseInt(this.curHours / 10) !== parseInt(hours / 10)) {
+                    this.addBalls(this.MARGIN_LEFT + 15 * (this.radius + 1), this.MARGIN_TOP, parseInt(hours / 10));
+                }
+                if (parseInt(this.curHours % 10) !== parseInt(hours % 10)) {
+                    this.addBalls(this.MARGIN_LEFT + 30 * (this.radius + 1), this.MARGIN_TOP, parseInt(hours % 10));
+                }
+                this.curHours = hours;
+                // 绘制之前清空画布
+                context.clearRect(0, 0, this.WINDOW_WIDTH, this.WINDOW_HEIGHT);
+                // context.clearRect(0, 0, context.canvas.width, context.canvas.height);
                 // 绘制小时
                 this.renderClock(this.MARGIN_LEFT, this.MARGIN_TOP, parseInt(hours / 10), context);
                 this.renderClock(this.MARGIN_LEFT + 15 * (this.radius + 1), this.MARGIN_TOP, parseInt(hours % 10), context);
@@ -205,6 +256,25 @@
                         }
                     }
                 }
+            },
+            /**
+             *  update 小球的位置更新
+             */
+            update() {
+                this.ball.x += this.ball.vx;
+                this.ball.y += this.ball.vy;
+                this.ball.vy += this.ball.g;
+                // 碰撞检测
+                if (this.ball.y >= (768 - this.ball.r)) {
+                    this.ball.y = 768 - this.ball.r;
+                    this.ball.vy = -this.ball.vy * 0.5; // 阻力系数0.5
+                }
+            },
+            /**
+             *  addBalls 生成一堆的小球
+             */
+            addBalls(x, y, num) {
+
             }
         },
         mounted () {
