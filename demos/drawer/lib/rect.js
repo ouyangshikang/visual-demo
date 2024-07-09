@@ -1,6 +1,6 @@
 /* -------------- 可拖动和缩放矩形类 -------------- */
-import { Polygon } from './polygon';
-import { DrawHelper } from './draw-helper';
+import { Polygon } from './polygon.js';
+import { DrawHelper } from './draw-helper.js';
 
 export class DragableAndScalableRect extends Polygon {
   minWidth = 0;

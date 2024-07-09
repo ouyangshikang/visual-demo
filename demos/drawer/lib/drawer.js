@@ -1,4 +1,4 @@
-import { DrawHelper } from './draw-helper';
+import { DrawHelper } from './draw-helper.js';
 
 /* -------------- canvas 画板类 -------------- */
 export class Drawer {

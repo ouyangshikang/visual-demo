@@ -1,5 +1,5 @@
-import { Drawer } from './lib/drawer';
-import { DragableAndScalableRect } from './lib/rect';
+import { Drawer } from './lib/drawer.js';
+import { DragableAndScalableRect } from './lib/rect.js';
 
 // 创建画板
 const drawer = new Drawer('#drawer');
