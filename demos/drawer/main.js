@@ -1,8 +1,5 @@
 import { Drawer } from './lib/drawer';
 import { DragableAndScalableRect } from './lib/rect';
-import { a } from '@vd/utils';
-
-console.log(a);
 
 // 创建画板
 const drawer = new Drawer('#drawer');
