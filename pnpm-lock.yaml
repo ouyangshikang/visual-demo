@@ -7,13 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@vd/core':
-        specifier: workspace:*
-        version: link:packages/core
-      '@vd/utils':
-        specifier: workspace:*
-        version: link:packages/utils
     devDependencies:
       vite:
         specifier: ^5.2.10

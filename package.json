@@ -6,14 +6,9 @@
   "keywords": [],
   "author": "baituo",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "dev": "vite"
   },
   "devDependencies": {
     "vite": "^5.2.10"
-  },
-  "dependencies": {
-    "@vd/core": "workspace:*",
-    "@vd/utils": "workspace:*"
   }
 }
