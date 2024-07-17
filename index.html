@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>可视化demo</title>
+    <title>visual-demo</title>
     <style>
       * {
         margin: 0;
@@ -57,7 +57,10 @@
 
     <script>
       const createNavs = () => {
-        const navs = [{ title: '矩形小画板', to: './demos/drawer/index.html' }];
+        const navs = [
+          { title: '矩形小画板', to: './demos/drawer/index.html' },
+          { title: '坦克大战游戏', to: './demos/tank/dist/index.html' },
+        ];
         const $navs = document.querySelector('.navs');
         const $iframe = document.querySelector('iframe');
         navs.forEach((nav, i) => {
