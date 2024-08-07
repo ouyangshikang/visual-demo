@@ -1,0 +1,15 @@
+*.sh
+*.woff
+*.tff
+*.html
+*.yaml
+*.md
+node_modules
+.vscode
+.idea
+.husky
+/public
+/docs
+/bin
+
+components.d.ts

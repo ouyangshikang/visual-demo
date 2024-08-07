@@ -13,13 +13,17 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "naive-ui": "2.39.0",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
+    "@iconify/json": "2.2.234",
+    "@iconify/vue": "4.1.1",
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
+    "@typescript-eslint/parser": "7.18.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",
@@ -29,8 +33,11 @@
     "eslint-plugin-vue": "^9.23.0",
     "npm-run-all2": "^6.2.0",
     "prettier": "^3.2.5",
-    "typescript": "~5.4.0",
+    "typescript": "5.5.4",
+    "unplugin-icons": "0.19.1",
+    "unplugin-vue-components": "0.27.3",
     "vite": "^5.3.1",
+    "vite-plugin-svg-icons": "2.0.1",
     "vue-tsc": "^2.0.21"
   }
 }
