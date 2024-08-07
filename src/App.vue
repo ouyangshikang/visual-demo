@@ -1,86 +1,45 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <icon-local-avatar />
-      <icon-mdi:download />
-
-      <n-button>你好</n-button>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <n-config-provider
+    :theme="naiveTheme"
+    :theme-overrides="getThemeOverrides()"
+    :locale="zhCN"
+    :date-locale="dateZhCN"
+    inline-theme-disabled
+    class="h-full"
+  >
+    <naive-provider>
+      <router-view />
+    </naive-provider>
+  </n-config-provider>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<script setup lang="ts">
+import { computed, onUnmounted, watch } from 'vue';
+import { dateZhCN, zhCN, darkTheme } from 'naive-ui';
+import { darkMode, getThemeOverrides, handleCssDarkMode } from '@/theme';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+const { addDarkClass, removeDarkClass } = handleCssDarkMode();
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+const naiveTheme = computed(() => (darkMode ? darkTheme : undefined));
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+// 监听暗黑模式
+const stopDarkMode = watch(
+  () => darkMode,
+  (newValue) => {
+    if (newValue) {
+      addDarkClass();
+    } else {
+      removeDarkClass();
+    }
+  },
+  {
+    immediate: true
   }
+);
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+onUnmounted(() => {
+  stopDarkMode();
+});
+</script>
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<style scoped></style>
