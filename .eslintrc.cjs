@@ -6,10 +6,11 @@ module.exports = {
     es6: true
   },
   extends: [
-    'plugin:vue/vue3-essential',
     'eslint:recommended',
-    '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier/skip-formatting'
+    'plugin:vue/vue3-essential', // Vue 3 相关的 ESLint 规则
+    '@vue/eslint-config-prettier', // 确保 ESLint 不与 Prettier 冲突
+    'plugin:prettier/recommended', // 使用 Prettier 作为 ESLint 规则
+    '@vue/eslint-config-typescript' // 与 TypeScript 相关的 ESLint 规则
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',

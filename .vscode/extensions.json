@@ -1,9 +1,14 @@
 {
   "recommendations": [
     "Vue.volar",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "antfu.unocss",
-    "streetsidesoftware.code-spell-checker"
+    "antfu.iconify", // iconify 图标显示
+    "antfu.unocss", // unocss 代码提示
+    "christian-kohler.path-intellisense", // 文件路径提示/补全
+    "dbaeumer.vscode-eslint", // eslint
+    "esbenp.prettier-vscode", // prettier
+    "eamodio.gitlens", // git
+    "editorconfig.editorconfig", // editorconfig
+    "naumovs.color-highlight", // 颜色高亮
+    "streetsidesoftware.code-spell-checker", // 单词拼写检查
   ]
 }
