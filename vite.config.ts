@@ -50,5 +50,6 @@ export default defineConfig({
       ]
     }),
     unocss()
-  ]
+  ],
+  server: { port: 3000, open: true }
 });
