@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "colord": "2.9.3",
-    "naive-ui": "2.39.0",
-    "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "naive-ui": "2.41.0",
+    "vue": "3.5.13",
+    "vue-router": "4.5.0"
   },
   "devDependencies": {
     "@iconify/json": "2.2.234",
@@ -38,12 +38,12 @@
     "eslint-plugin-vue": "^9.23.0",
     "npm-run-all2": "^6.2.0",
     "prettier": "^3.2.5",
-    "typescript": "5.5.4",
+    "typescript": "5.8.2",
     "unplugin-icons": "0.19.1",
     "unplugin-vue-components": "0.27.3",
     "vite": "^5.3.1",
     "vite-plugin-svg-icons": "2.0.1",
-    "vue-tsc": "^2.0.21"
+    "vue-tsc": "2.2.8"
   },
   "packageManager": "pnpm@9.12.1"
 }
