@@ -1,0 +1,109 @@
+/* Vue Flow 变量 */
+:root {
+  --vf-node-color: #222;
+  --vf-node-bg: #fff;
+  --vf-node-border: 1px solid #1a192b;
+  --vf-node-radius: 6px;
+  --vf-connection-path: #b1b1b7;
+  --vf-handle-color: #555;
+  --vf-handle-size: 8px;
+  --vf-handle-width: var(--vf-handle-size);
+  --vf-handle-height: var(--vf-handle-size);
+  --vf-background-color: #f8f8fa;
+  --vf-edge-radius: 5;
+
+  /* 新增连线样式变量 */
+  --vf-edge-color: #5B8FF9;
+  --vf-edge-width: 2px;
+  --vf-edge-selected-color: #F95B5B;
+  --vf-edge-hover-color: #8FC2FF;
+}
+
+/* 一般工作流样式 */
+.vue-flow {
+  height: 100%;
+}
+
+.vue-flow__handle {
+  width: var(--vf-handle-width);
+  height: var(--vf-handle-height);
+  background-color: var(--vf-handle-color);
+  border-color: white;
+}
+
+/* 连线基本样式 */
+.vue-flow__edge-path {
+  stroke: var(--vf-edge-color);
+  stroke-width: var(--vf-edge-width);
+  fill: none;
+  transition: stroke 0.2s, stroke-width 0.2s;
+}
+
+/* 选中连线样式 */
+.vue-flow__edge.selected .vue-flow__edge-path,
+.vue-flow__edge:focus .vue-flow__edge-path {
+  stroke: var(--vf-edge-selected-color);
+  stroke-width: 3px;
+}
+
+/* 动画连线样式 */
+.vue-flow__edge.animated .vue-flow__edge-path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* 悬停连线样式 */
+.vue-flow__edge:hover .vue-flow__edge-path {
+  stroke: var(--vf-edge-hover-color);
+  cursor: pointer;
+}
+
+/* 连线标签样式 */
+.vue-flow__edge-text {
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.vue-flow__edge.selected .vue-flow__edge-text,
+.vue-flow__edge:focus .vue-flow__edge-text {
+  font-weight: bold;
+}
+
+/* 控制面板 */
+.vue-flow__controls {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
+
+.vue-flow__controls-button {
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #eee;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  user-select: none;
+  padding: 5px;
+}
+
+.vue-flow__controls-button svg {
+  max-width: 12px;
+  max-height: 12px;
+}
+
+/* 小地图 */
+.vue-flow__minimap {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}

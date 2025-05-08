@@ -63,5 +63,6 @@ export function loadViewRoutes(): RouteRecordRaw[] {
  */
 export const pageMetaMap: Record<string, { title?: string }> = {
   home: { title: '首页' },
-  mask: { title: '蒙版功能' }
+  mask: { title: '蒙版功能' },
+  workflow: { title: '工作流编辑器' }
 };
